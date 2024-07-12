@@ -1,8 +1,8 @@
 package com.riyansugiarto.studentservice.mappers;
 
-import com.riyansugiarto.studentservice.dto.StudentDto;
-import com.riyansugiarto.studentservice.dto.StudentNameResponseDto;
-import com.riyansugiarto.studentservice.dto.StudentResponseDto;
+import com.riyansugiarto.studentservice.data.StudentDto;
+import com.riyansugiarto.studentservice.data.StudentNameResponseDto;
+import com.riyansugiarto.studentservice.data.StudentResponseDto;
 import com.riyansugiarto.studentservice.models.Student;
 import org.springframework.stereotype.Service;
 
