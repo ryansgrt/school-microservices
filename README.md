@@ -68,8 +68,13 @@ By following these steps, you can effectively manage and use the services within
 
 - Database Posgresql
 
+   **[DOWNLOAD HERE](dependencies/postgresql-download-link)**
+
+
 
 - Postman Collection
+
+  **[DOWNLOAD HERE](dependencies/school-microservices.postman_collection.json)**
 
 
 ## HOW TO USE API Endpoints
@@ -128,3 +133,4 @@ Base URL: `/api/v1/students`
 
 
 *If you're confused, you can refer to the API documentation in Postman. Below is an example image showing both success and error responses. This documentation provides clear examples of how requests are expected to behave, including what successful and unsuccessful responses look like.*
+
