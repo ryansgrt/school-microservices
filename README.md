@@ -18,41 +18,41 @@ Best required to access api endpoints using the api gateway endpoint `http://loc
 
 
 ## HOW TO USE
-To use the services listed (Eureka Server, School Service, Student Service, and Gateway) after cloning a project, you typically follow these steps:
+*To use the services listed (Eureka Server, School Service, Student Service, and Gateway) after cloning a project, you typically follow these steps:*
 
-Start Eureka Server (Discovery Service):
-
+- Start Eureka Server (Discovery Service) : 
 Navigate to the directory where Eureka Server is located (usually indicated as a separate module or project in your cloned repository).
 Build and run the Eureka Server application.
 Access it via http://localhost:8761 in your web browser to ensure it is up and running. Eureka Server provides a dashboard to view registered services.
-Start School Service:
 
+
+- Start School Service :
 Locate the School Service module in your cloned project.
 Build and run the School Service application.
 Verify its availability at http://localhost:8080.
 Start Student Service:
 
-Similarly, find the Student Service module.
+- Similarly, find the Student Service module.
 Build and run the Student Service application.
 Confirm it is running correctly at http://localhost:8081.
 Start Gateway:
 
-The Gateway acts as an entry point and routes requests to the appropriate services.
+- The Gateway acts as an entry point and routes requests to the appropriate services.
 Locate the Gateway module.
 Build and run the Gateway application.
 Access it through http://localhost:8765.
 Common Steps After Starting Services:
 Service Registration:
 
-Each service (School Service and Student Service) should register with Eureka Server upon startup. You can verify this by checking the Eureka Server dashboard (http://localhost:8761).
+- Each service (School Service and Student Service) should register with Eureka Server upon startup. You can verify this by checking the Eureka Server dashboard (http://localhost:8761).
 Service Discovery via Gateway:
 
-Configure the Gateway (http://localhost:8765) to route requests to the School Service (http://localhost:8080) and Student Service (http://localhost:8081). The Gateway typically uses service names registered with Eureka Server.
+- Configure the Gateway (http://localhost:8765) to route requests to the School Service (http://localhost:8080) and Student Service (http://localhost:8081). The Gateway typically uses service names registered with Eureka Server.
 Testing Endpoints:
 
-Use tools like Postman or curl to test endpoints exposed by the Gateway (http://localhost:8765). For example:
-Access http://localhost:8765/schools to retrieve schools via the School Service.
-Access http://localhost:8765/students to retrieve students via the Student Service.
+- Use tools like Postman or curl to test endpoints exposed by the Gateway (http://localhost:8765). For example:
+Access http://localhost:8765//api/v1/schools to retrieve schools via the School Service.
+Access http://localhost:8765//api/v1/students to retrieve students via the Student Service.
 
 
 
@@ -134,3 +134,4 @@ Base URL: `/api/v1/students`
 
 *If you're confused, you can refer to the API documentation in Postman. Below is an example image showing both success and error responses. This documentation provides clear examples of how requests are expected to behave, including what successful and unsuccessful responses look like.*
 
+![pict-postman](dependencies/postman-pict.png)
