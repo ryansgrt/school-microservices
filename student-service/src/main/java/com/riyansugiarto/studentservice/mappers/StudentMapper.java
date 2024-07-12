@@ -18,6 +18,7 @@ public class StudentMapper {
                 dto.firstName(),
                 dto.lastName(),
                 dto.email(),
+                dto.age(),
                 dto.schoolId()
         );
     }
@@ -27,11 +28,14 @@ public class StudentMapper {
                 student.getFirstName(),
                 student.getLastName(),
                 student.getEmail(),
+                student.getAge(),
                 student.getSchoolId()
         );
     }
 
+
+
     public StudentNameResponseDto studentNameResponseDto(Student student){
-        return new StudentNameResponseDto(student.getName());
+        return new StudentNameResponseDto(student.getName(), student.getAge(), student.getEmail());
     }
 }

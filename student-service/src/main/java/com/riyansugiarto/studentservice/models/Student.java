@@ -20,25 +20,18 @@ public class Student {
     private int age;
     private Integer schoolId;
 
-    @OneToOne(
-            mappedBy = "student",
-            cascade = CascadeType.ALL
-    )
-    @JsonManagedReference
-    private StudentProfile studentProfile;
 
-    public Student(String firstName, String lastName, String email, Integer schoolId) {
+    public Student(String firstName, String lastName, String email, Integer age, Integer schoolId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.schoolId= schoolId;
+        this.age = age;
+        this.schoolId = schoolId;
     }
 
-    public String getName(){
+    public String getName() {
         return firstName + " " + lastName;
     }
-
-
 
 
 }

@@ -1,7 +1,11 @@
 package com.riyansugiarto.studentservice.services;
 
+import com.riyansugiarto.studentservice.data.StudentDto;
+import com.riyansugiarto.studentservice.data.StudentNameResponseDto;
+import com.riyansugiarto.studentservice.data.StudentResponseDto;
 import com.riyansugiarto.studentservice.mappers.StudentMapper;
 import com.riyansugiarto.studentservice.repositories.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,14 +15,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
-    private final StudentRepository repository;
+    @Autowired
+    StudentRepository repository;
 
-    private final StudentMapper studentMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
-    public StudentService(StudentRepository repository, StudentMapper studentMapper) {
-        this.repository = repository;
-        this.studentMapper = studentMapper;
-    }
 
     public StudentResponseDto saveStudent(StudentDto dto){
         var student = studentMapper.toStudent(dto);
@@ -27,7 +29,6 @@ public class StudentService {
     }
 
     public List<StudentResponseDto> findAllStudent(){
-
         return repository.findAll()
                 .stream()
                 .map(studentMapper::toStudentResponseDto)
@@ -51,11 +52,10 @@ public class StudentService {
         repository.deleteById(id);
     }
 
-    public ResponseEntity<List<StudentNameResponseDto>> findAllStudentBySchool(Integer schoolId) {
-        List<StudentNameResponseDto> students = repository.findBySchoolId(schoolId)
+    public List<StudentNameResponseDto> findAllStudentBySchool(Integer schoolId) {
+        return repository.findBySchoolId(schoolId)
                 .stream()
                 .map(studentMapper::studentNameResponseDto)
                 .collect(Collectors.toList());
-        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 }

@@ -8,6 +8,7 @@ public record StudentDto(
         @NotEmpty(message = "Lastname should not be empty")
         String lastName,
         String email,
+        Integer age,
         Integer schoolId
 ) {
 }
