@@ -1,0 +1,841 @@
+{
+	"info": {
+		"_postman_id": "e2d6f79f-c502-402a-b2b2-3673a0af9b93",
+		"name": "school microservices",
+		"description": "API Micro service school with gateway and eureka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11102014"
+	},
+	"item": [
+		{
+			"name": "student-service",
+			"item": [
+				{
+					"name": "get all students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8765/api/v1/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8765/api/v1/students",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 19:50:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve all students\",\n    \"data\": [\n        {\n            \"firstName\": \"Xaviera\",\n            \"lastName\": \"Putri\",\n            \"email\": \"xavieraputri@gmail.com\",\n            \"age\": 22,\n            \"schoolId\": 1\n        },\n        {\n            \"firstName\": \"Sandy\",\n            \"lastName\": \"Kristian\",\n            \"email\": \"sandikristian@gmail.com\",\n            \"age\": 20,\n            \"schoolId\": 2\n        },\n        {\n            \"firstName\": \"Axel\",\n            \"lastName\": \"Giovanni Hartanto\",\n            \"email\": \"axelhartanto@gmail.com\",\n            \"age\": 19,\n            \"schoolId\": 2\n        },\n        {\n            \"firstName\": \"Kevin\",\n            \"lastName\": \"Bong\",\n            \"email\": \"kevinbong@gmail.com\",\n            \"age\": 20,\n            \"schoolId\": 2\n        },\n        {\n            \"firstName\": \"Riyan\",\n            \"lastName\": \"Sugiarto\",\n            \"email\": \"ryansgrt23@gmail.com\",\n            \"age\": 25,\n            \"schoolId\": 3\n        },\n        {\n            \"firstName\": \"Riyan\",\n            \"lastName\": \"Sugiarto\",\n            \"email\": \"ryansgrt234@gmail.com\",\n            \"age\": 25,\n            \"schoolId\": 3\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "insert student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Riyan\",\r\n    \"lastName\": \"Sugiarto\",\r\n    \"email\": \"riyansugiarto@gmail.com\",\r\n    \"age\": 25,\r\n    \"schoolId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8765/api/v1/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Riyan\",\r\n    \"lastName\": \"Sugiarto\",\r\n    \"email\": \"riyansugiarto@gmail.com\",\r\n    \"age\": 25,\r\n    \"schoolId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8765/api/v1/students",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 19:52:04 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success insert data student\",\n    \"data\": {\n        \"firstName\": \"Riyan\",\n        \"lastName\": \"Sugiarto\",\n        \"email\": \"riyansugiarto@gmail.com\",\n        \"age\": 25,\n        \"schoolId\": 3\n    }\n}"
+						},
+						{
+							"name": "response error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Riyan\",\r\n    \"lastName\": \"Sugiarto\",\r\n    \"email\": \"ryansgrt234@gmail.com\",\r\n    \"age\": 25,\r\n    \"schoolId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8765/api/v1/students",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 19:49:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Data Integrity Violation\",\n    \"error\": \"Unique constraint violated: ERROR: duplicate key value violates unique constraint \\\"student_email_key\\\"\\n  Detail: Key (email)=(ryansgrt234@gmail.com) already exists.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "find student by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8765/api/v1/students/353",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"353"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/students/353",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"353"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 19:54:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve student by id\",\n    \"data\": {\n        \"firstName\": \"Riyan\",\n        \"lastName\": \"Sugiarto\",\n        \"email\": \"riyansugiarto@gmail.com\",\n        \"age\": 25,\n        \"schoolId\": 3\n    }\n}"
+						},
+						{
+							"name": "response error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/students/353",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"353"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 19:54:54 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource Not Found\",\n    \"error\": \"Student not found with id: 3232\"\n}"
+						}
+					]
+				},
+				{
+					"name": "search student by name",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8765/api/v1/students/153",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"153"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/students/153",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"153"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:01:26 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success delete student\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "find all students by school",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8765/api/v1/students/schools/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"students",
+								"schools",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response susccess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/students/schools/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"schools",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:19:42 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve students by school\",\n    \"data\": [\n        {\n            \"name\": \"Sandy Kristian\",\n            \"age\": 20,\n            \"email\": \"sandikristian@gmail.com\"\n        },\n        {\n            \"name\": \"Axel Giovanni Hartanto\",\n            \"age\": 19,\n            \"email\": \"axelhartanto@gmail.com\"\n        },\n        {\n            \"name\": \"Kevin Bong\",\n            \"age\": 20,\n            \"email\": \"kevinbong@gmail.com\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "response student not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/students/schools/6",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"students",
+										"schools",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:24:16 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"data student(s) not found\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "school-service",
+			"item": [
+				{
+					"name": "find all school",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/v1/schools",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"schools"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8765/api/v1/schools",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:32:10 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve all schools\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Kaist University\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"National of Singapore University\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"University Of Indonesia\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create school",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"University Of Indonesia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8765/api/v1/schools",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"schools"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "reponse success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"University Of Indonesia\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8765/api/v1/schools",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:32:55 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success create school\",\n    \"data\": {\n        \"name\": \"University Of Indonesia\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "find school by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/v1/schools/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"schools",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8765/api/v1/schools/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:33:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve school by id\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"University Of Indonesia\"\n    }\n}"
+						},
+						{
+							"name": "response error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8765/api/v1/schools/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"9"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:34:34 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Resource Not Found\",\n    \"error\": \"School not found with id: 9\"\n}"
+						}
+					]
+				},
+				{
+					"name": "find all student by school",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8765/api/v1/schools/students/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"v1",
+								"schools",
+								"students",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/schools/students/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"students",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 20:59:45 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success retrieve students by school\",\n    \"data\": [\n        {\n            \"name\": \"Xaviera Putri\",\n            \"age\": 22,\n            \"email\": \"xavieraputri@gmail.com\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "response student not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8765/api/v1/schools/students/7",
+									"host": [
+										"localhost"
+									],
+									"port": "8765",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"students",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jul 2024 21:00:29 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"data student(s) not found\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
